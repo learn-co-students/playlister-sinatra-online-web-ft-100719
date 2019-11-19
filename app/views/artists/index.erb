@@ -1,0 +1,7 @@
+<h1>List of All Artists</h1>
+<% @artists.each do |artist| %>
+    <a href='/artists/<%= artist.slug %>'><li><%= artist.name %></li>
+<% end %>
+<br><br>
+
+<a href='/'><input type='button' value='Return to Main Page'></a>
