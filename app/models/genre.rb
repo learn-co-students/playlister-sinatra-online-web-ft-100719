@@ -13,4 +13,6 @@ class Genre < ActiveRecord::Base
         self.all.find{|artist| artist.slug == slug}
         #binding.pry
     end
+
+    
 end
