@@ -5,6 +5,7 @@ class Artist < ActiveRecord::Base
 
 
     def slug
+        #binding.pry
         self.name.gsub(" ", "-").downcase
     end
 
