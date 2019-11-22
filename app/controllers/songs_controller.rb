@@ -14,14 +14,11 @@ class SongsController < ApplicationController
     end
 
     post '/songs' do 
-        binding.pry
+        #binding.pry
         @song = Song.create(name: params["song_name"])
-        binding.pry
         @song.artist = Artist.find_or_create_by(name: params["artist_name"])
-        
         params[:genres].each do |t|
-            binding.pry
-            @song.genres << Genre.find_or_create_by(t["name"])
+            @song.genres << Genre.find_or_create_by(name: t)
         end
         @song.save
         flash[:message] = "Successfully created song."
