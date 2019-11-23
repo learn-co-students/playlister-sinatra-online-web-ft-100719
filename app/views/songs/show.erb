@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <h1>Song Information</h1>
+    <h3>Song:</h3>
+    <p><%=@song.name%></p>
+    <br>
+    <br>
+    <h2>Artist:</h2>
+    <li><a href="/artists/<%=@artist.slug%>"><%=@artist.name%></li>
+    <br>
+    <br>
+    <p>
+    <h2>Genre Info:</h2> </p>
+    <p>
+    <%@genre.each do |g| %>
+        <li><a href='/genres/<%=g.slug%>'><%=g.name%></a></li>
+      <%end%>
+    </p>
+
+    <% if flash.has?(:message) %>
+      <%= flash[:message] %>
+    <% end %>
+  </body>
+</html>
